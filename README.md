@@ -115,23 +115,10 @@ npx prisma db push
 \`\`\`
 
 This command will:
-- Create all the required tables (users, orders, rake_order_priority, rake_ord, audit_logs)
+- Create all the required tables (users, orders, audit_logs)
 - Set up the database schema according to the Prisma schema
 - Add password reset fields to the users table
 
-#### Step 5.4: Seed Initial Data
-
-Run the seed script to populate initial data:
-
-\`\`\`bash
-npx prisma db seed
-\`\`\`
-
-This will create:
-- Initial priority levels in `rake_order_priority` table
-- Sample steel company destinations and mills in `rake_ord` table
-- Default admin user (email: admin@company.com, password: admin123)
-- Sample operations manager and user accounts
 
 ## 🚀 Running the Application
 
@@ -228,9 +215,7 @@ yarn start
 
 1. **users**: User accounts with role-based access and OAuth support
 2. **orders**: Order management with status tracking
-3. **rake_order_priority**: Priority level definitions
-4. **rake_ord**: Reference data for steel companies and mills
-5. **audit_logs**: System activity tracking
+3. **audit_logs**: System activity tracking
 
 ### New Fields Added
 - **resetToken**: Secure token for password reset
@@ -267,52 +252,5 @@ yarn start
 - `DELETE /api/orders/[id]` - Delete order
 - `POST /api/orders/[id]/complete` - Mark order as completed
 
-## 🚨 Troubleshooting
 
-### OAuth Issues
 
-1. **Google OAuth Error**
-   - Verify Google Client ID and Secret in `.env`
-   - Check authorized redirect URIs in Google Console
-   - Ensure Google+ API is enabled
-
-2. **GitHub OAuth Error**
-   - Verify GitHub Client ID and Secret in `.env`
-   - Check authorization callback URL in GitHub settings
-   - Ensure OAuth App is properly configured
-
-3. **Password Reset Issues**
-   - Check database schema includes resetToken fields
-   - Verify NEXTAUTH_URL is correctly set
-   - Check console logs for reset links in development
-
-### Common Issues
-
-1. **Database Connection Error**
-   - Verify MySQL server is running
-   - Check DATABASE_URL in .env file
-   - Ensure database exists and credentials are correct
-
-2. **NextAuth Session Error**
-   - Verify NEXTAUTH_SECRET is set in .env
-   - Check NEXTAUTH_URL matches your domain
-   - Clear browser cookies and localStorage
-
-## 🔄 Version History
-
-- **v2.0.0** - Major UI overhaul and OAuth integration
-  - Google and GitHub OAuth authentication
-  - Complete password reset functionality
-  - Modern UI with gradient backgrounds and glass morphism
-  - Enhanced form validation and user feedback
-  - Improved responsive design
-
-- **v1.0.0** - Initial release with core functionality
-  - User authentication and role-based access
-  - Order management system
-  - Admin panel for user management
-  - Operations dashboard for order fulfillment
-
----
-
-**Built with ❤️ using Next.js, Prisma, MySQL, and NextAuth.js**
