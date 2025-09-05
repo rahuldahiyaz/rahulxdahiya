@@ -1,0 +1,94 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String    @id @default(cuid())
+  email           String    @unique
+  password        String
+  role            Role      @default(USER)
+  firstName       String
+  lastName        String
+  department      String?
+  designation     String?
+  gender          Gender?
+  profilePhoto    String?
+  phoneNumber     String?
+  address         String?
+  resetToken      String?   @unique
+  resetTokenExpiry DateTime?
+  oauthProvider   String?   // GOOGLE, GITHUB, etc.
+  oauthId         String?   // Provider's user ID
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  // Relations
+  orders       Order[]
+  auditLogs    AuditLog[]
+
+  @@map("users")
+}
+
+
+model Order {
+  id                  String      @id @default(cuid())
+  orderNumber         String      @unique
+  validUntil          DateTime
+  destination         String
+  materialCode        String
+  party               String
+  mill                String
+  priority            Int
+  materialDescription String
+  orderQuantity       Int
+  status              OrderStatus @default(DRAFT)
+  dispatchQuantity    Int?
+  completionNotes     String?
+  createdAt           DateTime    @default(now())
+  updatedAt           DateTime    @updatedAt
+
+  // Relations
+  userId              String
+  user                User        @relation(fields: [userId], references: [id])
+  auditLogs           AuditLog[]
+
+  @@map("orders")
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  action    String
+  details   String
+  createdAt DateTime @default(now())
+
+  // Relations
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  orderId   String?
+  order     Order?   @relation(fields: [orderId], references: [id])
+
+  @@map("audit_logs")
+}
+
+enum Role {
+  ADMIN
+  USER
+  OPERATIONS_MANAGER
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+enum OrderStatus {
+  DRAFT
+  FINALIZED
+  COMPLETED
+}
