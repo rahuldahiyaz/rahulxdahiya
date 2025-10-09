@@ -1,3 +1,31 @@
+# SAIL Bhilai Steel Plant Order Management System
+
+This repository contains the Order Management System for SAIL Bhilai Steel Plant, featuring advanced order processing, inventory management, and real-time tracking for steel products.
+
+## Screenshots
+
+Below are some screenshots demonstrating the features and UI of the system:
+
+### 1. Dashboard
+![Dashboard](assets/images/dashboard.png)
+
+---
+
+### 2. Landing Page
+![Landing Page](assets/images/landing.png)
+
+---
+
+### 3. User Management
+![User Management](assets/images/user-management.png)
+
+---
+
+### 4. Order Fulfillment
+![Order Fulfillment](assets/images/order-fulfillment.png)
+
+---
+
 # Order Management System
 
 A comprehensive Next.js application for managing orders with role-based access control, built with Prisma ORM and MySQL database.
