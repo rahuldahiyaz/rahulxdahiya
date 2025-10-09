@@ -26,6 +26,11 @@ Below are some screenshots demonstrating the features and UI of the system:
 
 ---
 
+### 5. User Dashboard
+![Order Fulfillment](https://github.com/rahuldahiyaz/rahulxdahiya/blob/main/assets/images/User%20.png)
+
+---
+
 # Order Management System
 
 A comprehensive Next.js application for managing orders with role-based access control, built with Prisma ORM and MySQL database.
