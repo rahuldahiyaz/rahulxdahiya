@@ -7,22 +7,22 @@ This repository contains the Order Management System for SAIL Bhilai Steel Plant
 Below are some screenshots demonstrating the features and UI of the system:
 
 ### 1. Dashboard
-![Dashboard](assets/images/dashboard.png)
+![Dashboard](https://github.com/rahuldahiyaz/rahulxdahiya/blob/main/assets/images/Admin.png)
 
 ---
 
 ### 2. Landing Page
-![Landing Page](assets/images/landing.png)
+![Landing Page](https://github.com/rahuldahiyaz/rahulxdahiya/blob/main/assets/images/Landing%20Page.png)
 
 ---
 
 ### 3. User Management
-![User Management](assets/images/user-management.png)
+![User Management](https://github.com/rahuldahiyaz/rahulxdahiya/blob/main/assets/images/Manage%20Users.png)
 
 ---
 
 ### 4. Order Fulfillment
-![Order Fulfillment](assets/images/order-fulfillment.png)
+![Order Fulfillment](https://github.com/rahuldahiyaz/rahulxdahiya/blob/main/assets/images/Operations%20Manager.png)
 
 ---
 
